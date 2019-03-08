@@ -1,9 +1,6 @@
 package lesson05;
 
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,12 +32,13 @@ public class FirstTest {
         driver.quit();
     }
 
-    @Test
+    @Test @Ignore
     public void verifyFirstTip(){
         driver.findElement(By.id("search_query_top")).clear();
         driver.findElement(By.id("search_query_top")).sendKeys("Dress");
         Stream<WebElement> streamWe = driver.findElements(By.xpath("//*[@id=\"index\"]/div[2]/ul/li")).stream();
         Optional<WebElement> webElementWithTip = streamWe.filter(we -> we.getText().contains("Dress")).findAny();
+
         Assert.assertThat(webElementWithTip.get().getText(), containsString("Dress"));
         Assert.assertTrue(webElementWithTip.get().getText().contains("Dress"));
     }

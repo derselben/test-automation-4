@@ -1,15 +1,11 @@
-package lesson06.wait_for_element_dissapered;
+package lesson06.c_implicit_wait_helps_for_first_appearing;
 
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 import static org.hamcrest.CoreMatchers.containsString;
 
@@ -33,8 +29,9 @@ public class FirstTest {
         driver.quit();
     }
 
+    @Ignore
     @Test
-    public void verifyFirstTip() throws TimeoutException {
+    public void verifyFirstTip(){
         driver.findElement(By.id("search_query_top")).clear();
         driver.findElement(By.id("search_query_top")).sendKeys("Dress");
 
@@ -43,26 +40,6 @@ public class FirstTest {
         driver.findElement(By.id("search_query_top")).clear();
         driver.findElement(By.id("search_query_top")).sendKeys("T-shirt");
 
-        waitForElementDissapering(By.xpath("//*[@id=\"index\"]/div[2]/ul/li[1]"),5000L);
         Assert.assertThat(driver.findElement(By.xpath("//*[@id=\"index\"]/div[2]/ul/li[1]")).getText(), containsString("T-shirt"));
-    }
-
-    void waitForElementDissapering(By by, long timeout) throws TimeoutException {
-
-        long initialTime = System.currentTimeMillis();
-        driver.manage().timeouts().implicitlyWait(500, TimeUnit.MILLISECONDS);
-        boolean hp = false;
-        while (true) {
-            if (System.currentTimeMillis() - initialTime > timeout) {
-                hp = true;
-                break;
-            }
-            if (driver.findElements(by).isEmpty()) {
-                 break;
-            }
-            driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-            if (hp)
-                throw new TimeoutException("Element is still present");
-        }
     }
 }

@@ -1,9 +1,6 @@
-package lesson06.lesson06_implicit_waits_helps_us;
+package lesson06.b_implicit_wait_helps_us;
 
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,6 +29,7 @@ public class FirstTest {
         driver.quit();
     }
 
+    @Ignore
     @Test
     public void verifyFirstTip(){
         driver.findElement(By.id("search_query_top")).clear();
