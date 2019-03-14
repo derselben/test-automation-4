@@ -10,6 +10,7 @@ public class FirstTest extends BaseTest {
 
     @Test
     public void verifyFirstTip(){
+
         String query1 = "Dress";
         String query2 = "T-shirt";
         LandingPage landingPage = new LandingPage(driver);
@@ -18,8 +19,7 @@ public class FirstTest extends BaseTest {
         landingPage.searchFor(query1);
         assertThat(textToBePresentInElementLocated(landingPage.firstTipLocator, query1));
 
-        landingPage.searchFor(query1);
+        landingPage.searchFor(query2);
         assertThat(textToBePresentInElementLocated(landingPage.firstTipLocator, query2), 15l);
     }
-
 }

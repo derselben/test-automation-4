@@ -66,11 +66,11 @@ public abstract class BaseTest extends SimpleAPI{
         return driver;
     }
 
-    void assertThat(ExpectedCondition<Boolean> condition){
-        assertThat(condition,15l);
-    }
-
     void assertThat(ExpectedCondition<Boolean> condition, long timeout) {
         waitFor(condition,timeout);
+    }
+
+    void assertThat(ExpectedCondition<Boolean> condition){
+        assertThat(condition,15l);
     }
 }

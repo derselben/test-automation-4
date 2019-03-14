@@ -2,7 +2,6 @@ package lesson08.b_add_basePage_and_simple_api;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static lesson08.b_add_basePage_and_simple_api.Conditions.clickable;
 
@@ -16,7 +15,7 @@ public class LandingPage extends BasePage{
     }
 
     void searchFor(String query){
-        $(searchFieldLocator, ExpectedConditions::elementToBeClickable).click();
+//        $(searchFieldLocator, ExpectedConditions::elementToBeClickable).click();
         $(searchFieldLocator, clickable).click();
         $(searchFieldLocator).clear();
         $(searchFieldLocator).sendKeys(query);
@@ -25,5 +24,4 @@ public class LandingPage extends BasePage{
     void visit(){
         open("http://automationpractice.com/index.php");
     }
-
 }
