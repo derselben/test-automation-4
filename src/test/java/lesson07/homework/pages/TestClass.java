@@ -1,4 +1,4 @@
-package lesson07.homework;
+package lesson07.homework.pages;
 
 import org.junit.*;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package lesson07.homework;
+package lesson07.homework.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,7 +33,7 @@ public class LandingPage {
     }
 
     public LandingPage(WebDriver driver) {
-        driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.get("http://automationpractice.com/index.php");
         driver.manage().window().maximize();
 

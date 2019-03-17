@@ -1,4 +1,4 @@
-package lesson07.a_explicity_waits_help.lesson07;
+package lesson07.a_explicity_waits_help;
 
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 import org.junit.*;
