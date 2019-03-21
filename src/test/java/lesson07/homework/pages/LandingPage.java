@@ -27,7 +27,7 @@ public class LandingPage {
         searchField.sendKeys(query);
     }
 
-    LoginPage goToLogIn(){
+    public LoginPage goToLogIn(){
         singInLink.click();
         return new LoginPage(driver);
     }

@@ -9,7 +9,7 @@ public class LoginPage {
 
     WebDriver driver;
 
-    static String loginPageTitle = "Login - My Store";
+    public static String loginPageTitle = "Login - My Store";
 
     @FindBy (id = "email")
     WebElement emailField;
@@ -20,26 +20,26 @@ public class LoginPage {
     @FindBy (id = "SubmitLogin")
     WebElement SubmitLoginBtn;
 
-    AccountPage logIn(String username, String password){
+    public AccountPage logIn(String username, String password){
         enterUsername(username)
                 .enterPassword(password)
                 .clickSubmitLoginBtn();
         return new AccountPage(driver);
     }
 
-    LoginPage enterUsername(String username){
+    public LoginPage enterUsername(String username){
         emailField.clear();
         emailField.sendKeys(username);
         return this;
     }
 
-    LoginPage enterPassword(String password){
+    public LoginPage enterPassword(String password){
         passwdField.clear();
         passwdField.sendKeys(password);
         return this;
     }
 
-    AccountPage clickSubmitLoginBtn(){
+    public AccountPage clickSubmitLoginBtn(){
         SubmitLoginBtn.click();
         return new AccountPage(driver);
     }
