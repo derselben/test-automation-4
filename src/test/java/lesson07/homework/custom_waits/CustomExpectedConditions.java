@@ -2,6 +2,7 @@ package lesson07.homework.custom_waits;
 
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -37,6 +38,17 @@ public class CustomExpectedConditions {
     }
 
     static ExpectedCondition<Boolean> stalenessOfElement(WebElement elToBeDisappeared){
-        return ExpectedConditions.stalenessOf(elToBeDisappeared);
+        return new ExpectedCondition<Boolean>() {
+            @NullableDecl
+            @Override
+            public Boolean apply(@NullableDecl WebDriver driver) {
+                try{
+                    elToBeDisappeared.isDisplayed();
+                    return false;
+                }catch (StaleElementReferenceException s){
+                    return true;
+                }
+            }
+        };
     }
 }
