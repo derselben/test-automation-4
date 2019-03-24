@@ -3,6 +3,8 @@ package lesson07.homework.pages;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.AccountPage;
+import pages.LoginPage;
 
 import static org.hamcrest.CoreMatchers.*;
 

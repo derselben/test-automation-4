@@ -1,8 +1,8 @@
 package lesson10.a_add_wd_event_listener;
 
-import lesson07.homework.pages.AccountPage;
+import pages.AccountPage;
 import lesson07.homework.pages.LandingPage;
-import lesson07.homework.pages.LoginPage;
+import pages.LoginPage;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

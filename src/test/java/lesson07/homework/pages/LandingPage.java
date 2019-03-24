@@ -3,7 +3,7 @@ package lesson07.homework.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import pages.LoginPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -37,7 +37,6 @@ public class LandingPage {
         driver.get("http://automationpractice.com/index.php");
         driver.manage().window().maximize();
 
-        PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 }

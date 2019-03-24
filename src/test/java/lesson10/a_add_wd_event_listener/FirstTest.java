@@ -1,22 +1,15 @@
 package lesson10.a_add_wd_event_listener;
 
-import lesson07.homework.pages.AccountPage;
-import lesson07.homework.pages.LoginPage;
+import pages.AccountPage;
+import pages.LoginPage;
 import lesson07.homework.pages.LandingPage;
-import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.FileDownloader;
 
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URISyntaxException;
-
-import static org.hamcrest.CoreMatchers.containsString;
 
 public class FirstTest extends BaseTest {
 
