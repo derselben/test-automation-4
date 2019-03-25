@@ -20,8 +20,9 @@ public class PurchaseTest extends BaseTest {
     @Test
     public void verifyOrder(){
         new LandingPage(driver)
-                .searchFor("");
+                .searchFor("Dress")
+                .submitSearch()
+                .hoverOnNthSearchResultItemAndAddToCard(1);
     }
-
 }
 

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.Conditions;
@@ -13,6 +14,8 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.invisibilityOfEl
 public class LandingPage extends BasePage {
 
 	String accountPageTitle = "My Store";
+
+    protected Actions action = new Actions(driver);
 
 	private JavascriptExecutor js = (JavascriptExecutor)driver;
 
@@ -38,6 +41,8 @@ public class LandingPage extends BasePage {
 	private By searchFieldLocator = By.id("search_query_top");
 	private By firstTipLocator = By.xpath("//*[@id='index']/div[2]/ul/li[1]");
 	private By searchResultItems = By.xpath("//*[@id=\"center_column\"]/ul/li");
+	private By addToCartBtn = By.xpath(".//span[text()[contains(.,'Add to cart')]]");
+	private By itemAddedPopUp = By.id("layer_cart");
 
 	public LandingPage switchToFacebookBlock (){
 		js.executeScript("arguments[0].scrollIntoView(true)", facebook_block);
@@ -50,10 +55,26 @@ public class LandingPage extends BasePage {
 		return this;
 	}
 
-	public void searchFor(String query) {
+	public LandingPage searchFor(String query) {
 		$(searchFieldLocator, Conditions.CLICKABLE).click();
 		$(searchFieldLocator).clear();
 		$(searchFieldLocator).sendKeys(query);
+		return this;
+	}
+
+	public LandingPage submitSearch() {
+		$(submitSearchBtnLocator).click();
+		waitFor(ExpectedConditions.visibilityOfAllElementsLocatedBy(searchResultItems));
+		return this;
+	}
+
+	public LandingPage hoverOnNthSearchResultItemAndAddToCard (int n){
+	    n--;
+	    action.moveToElement($$(searchResultItems).get(n)).click().build().perform();
+	    waitFor(ExpectedConditions.visibilityOf($$(searchResultItems).get(n).findElement(addToCartBtn)));
+        $$(searchResultItems).get(n).findElement(addToCartBtn).click();
+        $(itemAddedPopUp).findElement(By.xpath(".//a")).click();
+		return this;
 	}
 
 	public LoginPage goToLogIn(){
