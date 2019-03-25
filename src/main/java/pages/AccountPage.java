@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,8 +20,9 @@ public class AccountPage extends BasePage {
     @FindBy(className = "logout")
     WebElement singOutLink;
 
-    public LoginPage signOut(){
-        singOutLink.click();
+    @Override
+    public LoginPage signOut() {
+        super.signOut();
         return new LoginPage(driver);
     }
 

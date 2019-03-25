@@ -15,6 +15,8 @@ public class LandingPage extends BasePage {
 
 	String accountPageTitle = "My Store";
 
+	public int quantityOfSearchedItems;
+
     protected Actions action = new Actions(driver);
 
 	private JavascriptExecutor js = (JavascriptExecutor)driver;
@@ -55,6 +57,12 @@ public class LandingPage extends BasePage {
 		return this;
 	}
 
+	@Override
+	public LandingPage signOut() {
+		super.signOut();
+		return this;
+	}
+
 	public LandingPage searchFor(String query) {
 		$(searchFieldLocator, Conditions.CLICKABLE).click();
 		$(searchFieldLocator).clear();
@@ -65,16 +73,16 @@ public class LandingPage extends BasePage {
 	public LandingPage submitSearch() {
 		$(submitSearchBtnLocator).click();
 		waitFor(ExpectedConditions.visibilityOfAllElementsLocatedBy(searchResultItems));
+		quantityOfSearchedItems = $$(searchResultItems).size();
 		return this;
 	}
 
-	public LandingPage hoverOnNthSearchResultItemAndAddToCard (int n){
+	public CartPopUp hoverOnNthSearchResultItemAndAddToCard (int n){
 	    n--;
 	    action.moveToElement($$(searchResultItems).get(n)).click().build().perform();
 	    waitFor(ExpectedConditions.visibilityOf($$(searchResultItems).get(n).findElement(addToCartBtn)));
         $$(searchResultItems).get(n).findElement(addToCartBtn).click();
-        $(itemAddedPopUp).findElement(By.xpath(".//a")).click();
-		return this;
+        return new CartPopUp(driver);
 	}
 
 	public LoginPage goToLogIn(){
