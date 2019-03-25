@@ -3,10 +3,11 @@ package lesson09.a_add_simple_logging;
 import static org.hamcrest.CoreMatchers.containsString;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class FirstTest extends BaseTest {
-
+	@Ignore
 	@Test
 	public void verifyFirstTip() {
 		// Given

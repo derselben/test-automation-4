@@ -31,8 +31,8 @@ public class FirstTest {
     public static void tearDown(){
         driver.quit();
     }
-
-    @Test @Ignore
+    @Ignore
+    @Test
     public void verifyFirstTip(){
         driver.findElement(By.id("search_query_top")).clear();
         driver.findElement(By.id("search_query_top")).sendKeys("Dress");

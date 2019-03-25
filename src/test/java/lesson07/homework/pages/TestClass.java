@@ -34,7 +34,7 @@ public class TestClass {
     public static void tearDown(){
         driver.quit();
     }
-
+    @Ignore
     @Test
     public void verifyLoginViaMethodsChain(){
 
@@ -47,7 +47,7 @@ public class TestClass {
 
         Assert.assertThat(driver.getTitle(), is(AccountPage.accountPageTitle));
     }
-
+    @Ignore
     @Test
     public void verifyLoginViaLogInMethod(){
 
@@ -59,7 +59,7 @@ public class TestClass {
 
         Assert.assertThat(driver.getTitle(), is(AccountPage.accountPageTitle));
     }
-
+    @Ignore
     @Test
     public void verifyLogOut(){
 

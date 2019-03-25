@@ -37,7 +37,7 @@ public class AccountTest {
     public void goBackToYourAccount(){
             driver.findElement(By.xpath("//*/span[text()[contains(.,'Back')]]/i[@class=\"icon-chevron-left\"]")).click();
     }
-
+    @Ignore
     @Test
     public void verifyAvailabilityOf_ORDER_HISTORY_AND_DETAILS(){
         driver.findElement(By.className("icon-list-ol")).click();
@@ -46,7 +46,7 @@ public class AccountTest {
         Assert.assertEquals("Should be equal","ORDER HISTORY",s);
 //        driver.findElement(By.linkText("Back to your account.")).click();
     }
-
+    @Ignore
     @Test
     public void verifyAvailabilityOf_MY_CREDIT_SLIPS(){
         driver.findElement(By.className("icon-ban-circle")).click();
@@ -55,7 +55,7 @@ public class AccountTest {
         Assert.assertEquals("Should be equal","CREDIT SLIPS",s);
 //        driver.findElement(By.linkText("Back to your account.")).click();
     }
-
+    @Ignore
     @Test
     public void verifyAvailabilityOf_MY_ADDRESSES(){
         driver.findElement(By.className("icon-building")).click();
@@ -64,7 +64,7 @@ public class AccountTest {
         Assert.assertEquals("Should be equal","MY ADDRESSES",s);
 //        driver.findElement(By.linkText("Back to your account.")).click();
     }
-
+    @Ignore
     @Test
     public void verifyAvailabilityOf_MY_PERSONAL_INFORMATION(){
         driver.findElement(By.className("icon-user")).click();
@@ -73,7 +73,7 @@ public class AccountTest {
         Assert.assertEquals("Should be equal","YOUR PERSONAL INFORMATION",s);
 //        driver.findElement(By.linkText("Back to your account.")).click();
     }
-
+    @Ignore
     @Test
     public void verifyAvailabilityOf_MY_WISHLISTS(){
         driver.findElement(By.className("icon-heart")).click();

@@ -1,5 +1,6 @@
 package lesson10.a_add_wd_event_listener;
 
+import org.junit.Ignore;
 import pages.AccountPage;
 import pages.LoginPage;
 import lesson07.homework.pages.LandingPage;
@@ -13,6 +14,7 @@ import java.net.URISyntaxException;
 
 public class FirstTest extends BaseTest {
 
+    @Ignore
 	@Test
 	public void verifyFirstTip() throws IOException, URISyntaxException {
 

@@ -2,6 +2,7 @@ package lesson07.d_be_carefull_with_cached_el;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,7 +33,7 @@ public class FirstTest {
     public static void tearDown(){
         driver.quit();
     }
-
+    @Ignore
     @Test
     public void verifyFirstTip(){
         String query1 = "Dress";

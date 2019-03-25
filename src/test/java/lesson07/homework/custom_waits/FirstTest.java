@@ -2,6 +2,7 @@ package lesson07.homework.custom_waits;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,7 +29,7 @@ public class FirstTest {
     public static void tearDown(){
         driver.quit();
     }
-
+    @Ignore
     @Test
     public void verifyNthTipToBeWithQueriedText(){
 
@@ -42,7 +43,7 @@ public class FirstTest {
                 .until(CustomExpectedConditions
                         .listNthElementHasText(landingPage.tipsLocator,2,query));
     }
-
+    @Ignore
     @Test
     public void verifyPageWasLoaded(){
 
@@ -53,7 +54,7 @@ public class FirstTest {
                 .until(CustomExpectedConditions
                         .pageIsLoaded(landingPage.url,landingPage.title));
     }
-
+    @Ignore
     @Test
     public void verifyElementDisappeared(){
 

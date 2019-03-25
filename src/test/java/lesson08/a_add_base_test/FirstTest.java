@@ -1,5 +1,6 @@
 package lesson08.a_add_base_test;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -7,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.openqa.selenium.support.ui.ExpectedConditions.textToBePresentInElementLocated;
 
 public class FirstTest extends BaseTest {
-
+    @Ignore
     @Test
     public void verifyFirstTip(){
         String query1 = "Dress";

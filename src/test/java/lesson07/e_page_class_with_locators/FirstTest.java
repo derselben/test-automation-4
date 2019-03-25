@@ -2,6 +2,7 @@ package lesson07.e_page_class_with_locators;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +34,7 @@ public class FirstTest {
     public static void tearDown(){
         driver.quit();
     }
-
+    @Ignore
     @Test
     public void verifyFirstTip(){
         String query1 = "Dress";

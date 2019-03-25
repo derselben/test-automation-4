@@ -30,7 +30,7 @@ public class SearchTest {
     public static void tearDown(){
         driver.quit();
     }
-
+    @Ignore
     @Test
     public void verifyFirstTip(){
         driver.findElement(By.id("search_query_top")).clear();

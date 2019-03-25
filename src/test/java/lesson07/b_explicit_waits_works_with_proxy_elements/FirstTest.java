@@ -2,6 +2,7 @@ package lesson07.b_explicit_waits_works_with_proxy_elements;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -32,7 +33,7 @@ public class FirstTest {
     public static void tearDown(){
         driver.quit();
     }
-
+    @Ignore
     @Test
     public void verifyFirstTip(){
         driver.findElement(By.id("search_query_top")).clear();
