@@ -25,7 +25,7 @@ public class TestClass {
 
     @After
     public void logOutIfNeeded(){
-        if (!driver.getTitle().equals(LoginPage.loginPageTitle)){
+        if (!driver.getTitle().equals(LoginPage.LOGIN_PAGE_TITLE)){
         new AccountPage(driver).signOut();
         }
     }
@@ -70,6 +70,6 @@ public class TestClass {
                         "qwerty123")
                 .signOut();
 
-        Assert.assertThat(driver.getTitle(), is(LoginPage.loginPageTitle));
+        Assert.assertThat(driver.getTitle(), is(LoginPage.LOGIN_PAGE_TITLE));
     }
 }

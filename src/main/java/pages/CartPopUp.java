@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class CartPopUp extends BasePage {
 
-//    private By productNameLocator = By.xpath("//*[contains(@id,'product')]//p[@class=\"product-name\" ]/a");
     private By productNameLocator = By.id("layer_cart_product_title");
     private By itemAddedPopUp = By.id("layer_cart");
 

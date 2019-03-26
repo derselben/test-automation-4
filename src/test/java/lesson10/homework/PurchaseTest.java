@@ -13,11 +13,12 @@ import static org.hamcrest.CoreMatchers.containsString;
 
 public class PurchaseTest extends BaseTest {
 
-    LandingPage landingPage = new LandingPage(driver);
+    LandingPage landingPage;
 
     @Before
     public void logIn (){
 
+        landingPage = new LandingPage(driver);
         landingPage
                 .visit()
                 .goToLogIn()

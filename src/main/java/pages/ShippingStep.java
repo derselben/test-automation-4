@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class ShippingStep extends BaseStep{
 
-    private By IAgreeCheckBoxLocator = By.id("uniform-cgv");
+    private By iAgreeCheckBoxLocator = By.id("uniform-cgv");
 
     public PaymentStep proceed() {
         super.proceed();
@@ -13,7 +13,7 @@ public class ShippingStep extends BaseStep{
     }
 
     public ShippingStep iAgree(){
-        $(IAgreeCheckBoxLocator).click();
+        $(iAgreeCheckBoxLocator).click();
         return this;
     }
 
