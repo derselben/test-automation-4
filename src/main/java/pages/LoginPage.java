@@ -3,13 +3,10 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BasePage{
 
-    WebDriver driver;
-
-    public static String loginPageTitle = "Login - My Store";
+    public static final String LOGIN_PAGE_TITLE = "Login - My Store";
 
     @FindBy(id = "email")
     WebElement emailField;
@@ -18,7 +15,7 @@ public class LoginPage extends BasePage{
     WebElement passwdField;
 
     @FindBy (id = "SubmitLogin")
-    WebElement SubmitLoginBtn;
+    WebElement submitLoginBtn;
 
     public AccountPage logIn(String username, String password) {
         enterUsername(username)
@@ -40,7 +37,7 @@ public class LoginPage extends BasePage{
     }
 
     public AccountPage clickSubmitLoginBtn(){
-        SubmitLoginBtn.click();
+        submitLoginBtn.click();
         return new AccountPage(driver);
     }
 
