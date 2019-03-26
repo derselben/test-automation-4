@@ -25,7 +25,7 @@ public class OrdersPage extends BasePage {
         return $$(ordersListLocator);
     }
 
-    public OrdersPage openNthOrederDetails(int n){
+    public OrdersPage openNthOrderDetails(int n){
         n--;
         getOrdersList().get(n).findElement(By.xpath(".//td/a/span")).click();
         $(submitReorderLocator);

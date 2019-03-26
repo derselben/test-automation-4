@@ -9,7 +9,7 @@ import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 
 import java.util.Arrays;
 
-public class EventHandler extends AbstractWebDriverEventListener{
+public class EventHandler extends AbstractWebDriverEventListener {
     private static final Logger LOG = LogManager.getLogger(EventHandler.class);
 
     @Override

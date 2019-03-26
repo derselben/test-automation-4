@@ -1,5 +1,7 @@
 package pages;
 
+import org.junit.Rule;
+import org.junit.rules.TestWatcher;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

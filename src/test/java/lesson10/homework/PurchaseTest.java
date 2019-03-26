@@ -37,10 +37,10 @@ public class PurchaseTest extends BaseTest {
                 .searchFor("Dress")
                 .submitSearch();
 
-        int itemNumer = new Random().nextInt(landingPage.quantityOfSearchedItems);
+        int itemNumber = new Random().nextInt(landingPage.quantityOfSearchedItems);
 
         CartPopUp cartPopUp = landingPage
-                .hoverOnNthSearchResultItemAndAddToCard(itemNumer);
+                .hoverOnNthSearchResultItemAndAddToCard(itemNumber);
 
         String addedProductName = cartPopUp.getProductName();
 
@@ -54,7 +54,7 @@ public class PurchaseTest extends BaseTest {
                 .confirmPayment();
 
         String firstItemNameOfLastOrder =  new OrdersPage(driver).visit()
-                .openNthOrederDetails(1)
+                .openNthOrderDetails(1)
                 .getNthOrderItemName(1);
 
         Assert.assertThat(firstItemNameOfLastOrder, containsString(addedProductName));
