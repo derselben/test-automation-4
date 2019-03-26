@@ -32,7 +32,7 @@ public class CustomExpectedConditions {
             @NullableDecl
             @Override
             public Boolean apply(@NullableDecl WebDriver driver) {
-                return driver.getTitle().equals(expTitle) && driver.getCurrentUrl().equals(expUrl);
+                return expTitle.equals(driver.getTitle()) && expUrl.equals(driver.getCurrentUrl());
             }
         };
     }
