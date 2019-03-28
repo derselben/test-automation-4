@@ -78,7 +78,7 @@ public class LandingPage extends BasePage {
 	}
 
 	public CartPopUp hoverOnNthSearchResultItemAndAddToCard (int n){
-	    n--;
+		System.out.println("trying to hover on " + n + "th item");
 	    action.moveToElement($$(searchResultItems).get(n)).click().build().perform();
 	    waitFor(ExpectedConditions.visibilityOf($$(searchResultItems).get(n).findElement(addToCartBtn)));
         $$(searchResultItems).get(n).findElement(addToCartBtn).click();
