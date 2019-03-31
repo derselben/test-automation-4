@@ -33,11 +33,9 @@ public class PurchaseTest extends BaseTest {
 
     @Test
     public void verifyThatOrderIsSameAsWasCheckedOut(){
-
         landingPage
                 .searchFor("Dress")
                 .submitSearch();
-
         int itemNumber = new Random().nextInt(landingPage.quantityOfSearchedItems);
 
         CartPopUp cartPopUp = landingPage
