@@ -32,7 +32,7 @@ public class PurchaseTest extends BaseTest {
     }
 
     @Test
-    public void verifyOrder(){
+    public void verifyOrderHistoryPage(){
 
         landingPage
                 .searchFor("Dress")
