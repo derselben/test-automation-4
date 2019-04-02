@@ -53,6 +53,19 @@ public abstract class SimpleAPI {
 		return (new WebDriverWait(getDriver(), timeout)).until(condition);
 	}
 
+	protected void captureScreenshoot(String methodName) {
+		File screenshot = ((TakesScreenshot)getDriver())
+				.getScreenshotAs(OutputType.FILE);
+		String screenshotName = screenshot.getName().replace("screenshot", methodName + "_");
+		String path = System.getProperty("report.path") + "/screenshots/" + screenshotName;
+		try {
+			FileUtils.copyFile(screenshot, new File(path));
+			LOGGER.error("Screenshot was got: " + screenshotName);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	protected <T> T waitFor(ExpectedCondition<T> condition) {
 		return waitFor(condition, 10l);
 	}
