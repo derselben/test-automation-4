@@ -44,7 +44,6 @@ public class LandingPage extends BasePage {
 	private By firstTipLocator = By.xpath("//*[@id='index']/div[2]/ul/li[1]");
 	private By searchResultItems = By.xpath("//*[@id=\"center_column\"]/ul/li");
 	private By addToCartBtn = By.xpath(".//span[text()[contains(.,'Add to cart')]]");
-	private By itemAddedPopUp = By.id("layer_cart");
 
 	public LandingPage switchToFacebookBlock (){
 		js.executeScript("arguments[0].scrollIntoView(true)", facebook_block);
